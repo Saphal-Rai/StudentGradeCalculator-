@@ -1,0 +1,4 @@
+1,saphal,saphalrai53@gmail.com,B,0.0,null,[]
+1,Saphal,saphalrai53@gmail.com,C,0.0,null,[]
+2,Dimple,dimple34@gmail.com,A,0.0,null,[]
+1,Saphal,saphalrai53@gmail.com,C,71.25,B+,[10, 88, 88, 99]
