@@ -179,7 +179,7 @@ public class Main {
         }
         
         System.out.printf("Student: %-30s", student.getName());
-        System.out.print("Are you sure? (y/n): ");
+        System.out.print("Are you sure??? (y/n): ");
         String confirm = scanner.next();
         
         if (confirm.equalsIgnoreCase("y")) {

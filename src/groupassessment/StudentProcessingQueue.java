@@ -18,9 +18,9 @@ public class StudentProcessingQueue {
     }
     
     public void processAll() {
-        System.out.println("      PROCESSING STUDENT QUEUE        ");
+        System.out.println(" PROCESSING STUDENT QUEUE  ");
         if (queue.isEmpty()) {
-            System.out.println("        No students in queue!!         ");
+            System.out.println(" No students in queue!!  ");
         } else {
             int count = 1;
             while (!queue.isEmpty()) {

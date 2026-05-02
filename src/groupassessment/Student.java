@@ -68,13 +68,13 @@ public class Student extends Person {
     public String getSection() { return section; }
    
     public void displayInfo() {
-        System.out.printf(" Student ID: %-30d│\n", id);
-        System.out.printf(" Name: %-33s│\n", name);
-        System.out.printf(" Email: %-32s│\n", email);
-        System.out.printf(" Section: %-30s│\n", section);
-        System.out.printf(" Percentage: %-28.2f%%│\n", percentage);
-        System.out.printf(" Grade: %-32s│\n", grade);
-        System.out.printf(" Marks: %-32s│\n", marks.toString());
+        System.out.printf(" Student ID: %-30d ", id);
+        System.out.printf(" Name: %-33s ", name);
+        System.out.printf(" Email: %-32s ", email);
+        System.out.printf(" Section: %-30s ", section);
+        System.out.printf(" Percentage: %-28.2f%% ", percentage);
+        System.out.printf(" Grade: %-32s ", grade);
+        System.out.printf(" Marks: %-32s ", marks.toString());
     }
     
     public String getRole() {
@@ -82,6 +82,6 @@ public class Student extends Person {
     }
     
     public String toFileString() {
-        return id + "|" + name + "|" + email + "|" + section + "|" + percentage + "|" + grade + "|" + marks.toString();
+        return id + " " + name + " " + email + " " + section + " " + percentage + " " + grade + " " + marks.toString();
     }
 }

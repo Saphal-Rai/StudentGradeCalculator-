@@ -69,7 +69,7 @@ public class StudentLinkedList {
     
     public void sortById() {
         list.sort(Comparator.comparingInt(Student::getId));
-        System.out.println(" Sorted by ID");
+        System.out.println(" Sorted by Student ID");
     }
     
     public int size() { return list.size(); }
