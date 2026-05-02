@@ -1,6 +1,7 @@
 package groupassessment;
 import java.util.*;
 
+
 public class StudentLinkedList {
     private LinkedList<Student> list;
     private Map<Integer, Student> idMap;
@@ -19,26 +20,56 @@ public class StudentLinkedList {
         return idMap.get(id);
     }
     
-    public void remove(int id) throws StudentNotFoundException {
-        Student s = idMap.remove(id);
-        if (s == null) throw new StudentNotFoundException("Student ID " + id + " not found");
-        list.remove(s);
+    public void update(int id, String name, String email, String section) throws StudentNotFoundException {
+        Student student = find(id);
+        if (student == null) {
+            throw new StudentNotFoundException("Student ID " + id + " not found");
+        }
+        student.updateInfo(name, email, section);
+    }
+    
+    public void delete(int id) throws StudentNotFoundException {
+        Student student = idMap.remove(id);
+        if (student == null) {
+            throw new StudentNotFoundException("Student ID " + id + " not found");
+        }
+        list.remove(student);
     }
     
     public void displayAll() {
-        System.out.println("\n📋 All Students (LinkedList):");
+        System.out.println("      LIST OF ALL STUDENTS            ");
         if (list.isEmpty()) {
-            System.out.println("   No students");
-            return;
+            System.out.println("       No students registered    ");
+        } else {
+            int index = 1;
+            for (Student s : list) {
+                System.out.printf("  %d. %-20s ID: %-10d", index++, s.getName(), s.getId());
+                System.out.printf("     Grade: %-5s (%.2f%%)          ", s.getGrade(), s.getPercentage());
+            }
         }
-        for (Student s : list) {
-            System.out.println("   " + s.getName() + " (ID: " + s.getId() + ") - " + s.getGrade());
+    }
+    
+    public void displayStudentDetails(int id) throws StudentNotFoundException {
+        Student student = find(id);
+        if (student == null) {
+            throw new StudentNotFoundException("Student ID " + id + " not found");
         }
+        student.displayInfo();
     }
     
     public void sortByPercentage() {
         list.sort((a, b) -> Double.compare(b.getPercentage(), a.getPercentage()));
-        System.out.println("✅ Sorted by percentage");
+        System.out.println(" Sorted by % From highest");
+    }
+    
+    public void sortByName() {
+        list.sort(Comparator.comparing(Student::getName));
+        System.out.println(" Sorted by name");
+    }
+    
+    public void sortById() {
+        list.sort(Comparator.comparingInt(Student::getId));
+        System.out.println(" Sorted by ID");
     }
     
     public int size() { return list.size(); }

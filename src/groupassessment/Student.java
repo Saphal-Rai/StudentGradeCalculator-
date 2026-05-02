@@ -20,7 +20,7 @@ public class Student extends Person {
     
     public void addMark(int mark) throws InvalidMarkException {
         if (mark < 0 || mark > 100) {
-            throw new InvalidMarkException("Mark " + mark + "invalid || Accept 0-100");
+            throw new InvalidMarkException("Mark " + mark + " is invalid! Must be between 0-100");
         }
         marks.add(mark);
         updateMarksArray();
@@ -48,7 +48,7 @@ public class Student extends Person {
         grade = GradeUtils.getGrade(percentage);
     }
     
-
+    // Update student information
     public void updateInfo(String name, String email, String section) {
         if (name != null && !name.trim().isEmpty()) {
             this.name = name;
@@ -66,18 +66,17 @@ public class Student extends Person {
     public ArrayList<Integer> getMarks() { return marks; }
     public int[] getMarksArray() { return marksArray; }
     public String getSection() { return section; }
-    
+   
     public void displayInfo() {
-        System.out.printf("Student ID: %-30d│\n", id);
-        System.out.printf("Name: %-33s│\n", name);
-        System.out.printf("Email: %-32s│\n", email);
-        System.out.printf("Section: %-30s│\n", section);
-        System.out.printf("Percentage: %-28.2f%%│\n", percentage);
-        System.out.printf("Grade: %-32s│\n", grade);
-        System.out.printf("Marks: %-32s│\n", marks.toString());
+        System.out.printf(" Student ID: %-30d│\n", id);
+        System.out.printf(" Name: %-33s│\n", name);
+        System.out.printf(" Email: %-32s│\n", email);
+        System.out.printf(" Section: %-30s│\n", section);
+        System.out.printf(" Percentage: %-28.2f%%│\n", percentage);
+        System.out.printf(" Grade: %-32s│\n", grade);
+        System.out.printf(" Marks: %-32s│\n", marks.toString());
     }
     
-    @Override
     public String getRole() {
         return "Student";
     }

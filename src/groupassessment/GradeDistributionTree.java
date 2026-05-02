@@ -34,7 +34,7 @@ public class GradeDistributionTree {
     }
     
     public void inorder() {
-        System.out.print("\n🌳 Inorder Traversal: ");
+        System.out.print(" Sorted Inorder Traversal : ");
         inorderRec(root);
         System.out.println();
     }
@@ -48,7 +48,7 @@ public class GradeDistributionTree {
     }
     
     public void preorder() {
-        System.out.print("📊 Preorder Traversal: ");
+        System.out.print(" Preorder Traversal from Root: ");
         preorderRec(root);
         System.out.println();
     }
@@ -62,7 +62,7 @@ public class GradeDistributionTree {
     }
     
     public void postorder() {
-        System.out.print("📊 Postorder Traversal: ");
+        System.out.print("Postorder Traversal From Left: ");
         postorderRec(root);
         System.out.println();
     }

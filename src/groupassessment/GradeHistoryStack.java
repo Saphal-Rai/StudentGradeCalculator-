@@ -10,7 +10,7 @@ public class GradeHistoryStack {
     
     public void push(GradeRecord record) {
         stack.push(record);
-        System.out.println("✅ Pushed to stack");
+        System.out.println(" Chaged Grade are saved to stack");
     }
     
     public GradeRecord pop() {
@@ -21,13 +21,14 @@ public class GradeHistoryStack {
     }
     
     public void display() {
-        System.out.println("\n📚 Grade History Stack (LIFO):");
+        System.out.println("        HISTORY GRADE       ");
         if (stack.isEmpty()) {
-            System.out.println("   Stack is empty");
-            return;
-        }
-        for (int i = stack.size() - 1; i >= 0; i--) {
-            System.out.println("   " + (stack.size() - i) + ". " + stack.get(i));
+            System.out.println("         No available!!!, grade history     ");
+        } else {
+            System.out.println(" Recent - Oldest        ");
+            for (int i = stack.size() - 1; i >= 0; i--) {
+                System.out.printf("│  %d. %-36s│\n", (stack.size() - i), stack.get(i).toString().substring(0, Math.min(36, stack.get(i).toString().length())));
+            }
         }
     }
 }

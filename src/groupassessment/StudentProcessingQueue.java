@@ -1,5 +1,4 @@
 package groupassessment;
-
 import java.util.*;
 
 public class StudentProcessingQueue {
@@ -11,7 +10,7 @@ public class StudentProcessingQueue {
     
     public void enqueue(Student student) {
         queue.offer(student);
-        System.out.println("✅ " + student.getName() + " added to queue");
+        System.out.println("  " + student.getName() + " added For processing queue");
     }
     
     public Student dequeue() {
@@ -19,13 +18,14 @@ public class StudentProcessingQueue {
     }
     
     public void processAll() {
-        System.out.println("\n🔄 Processing Queue (FIFO):");
-        while (!queue.isEmpty()) {
-            Student s = dequeue();
-            if (s != null) {
-                System.out.println("   Processing: " + s.getName());
-                s.displayInfo();
-                System.out.println();
+        System.out.println("      PROCESSING STUDENT QUEUE        ");
+        if (queue.isEmpty()) {
+            System.out.println("        No students in queue!!         ");
+        } else {
+            int count = 1;
+            while (!queue.isEmpty()) {
+                Student s = dequeue();
+                System.out.printf("  %d. Processing: %-25s", count++, s.getName());
             }
         }
     }
