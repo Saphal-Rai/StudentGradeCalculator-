@@ -67,7 +67,7 @@ public class Main {
     }
     
     private static void printWelcomeScreen() {
-        System.out.println("                   STUDENT GRADE MANAGEMENT APPLICATION                                 ");
+        System.out.println("STUDENT GRADE MANAGEMENT APPLICATION");
     }
     
     private static void displayMainMenu() {;
@@ -89,7 +89,7 @@ public class Main {
     private static void addStudent() throws IOException {
         System.out.println("ADD NEW STUDENT");
         
-        System.out.print("│  Enter name: ");
+        System.out.print("Enter name: ");
         String name = scanner.next();
         
         System.out.print("Enter ID: ");
@@ -192,7 +192,11 @@ public class Main {
         pressEnterToContinue();
     }
     
-        
+
+    private static void addMarksToStudent() throws InvalidMarkException, IOException {
+        System.out.println("ADD MARKS TO STUDENT ");
+        System.out.print(" Enter Student ID: ");
+        int id = getIntInput("");
         Student student = studentList.find(id);
         if (student == null) {
             System.out.println("Student not found in System!!");
