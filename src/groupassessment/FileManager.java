@@ -27,7 +27,7 @@ public class FileManager {
                 writer.write(line);
                 writer.newLine();
             }
-            System.out.println("   💾 All data saved successfully!");
+            System.out.println("All data  are saved successfully!");
         }
     }
     
@@ -77,14 +77,14 @@ public class FileManager {
                 int distinctionCount = 0;
                 
                 for (Student s : students) {
-                    writer.write("Student ID: " + s.getId() + "\n");
-                    writer.write("Name: " + s.getName() + "\n");
-                    writer.write("Email: " + s.getEmail() + "\n");
-                    writer.write("Section: " + s.getSection() + "\n");
-                    writer.write("Percentage: " + String.format("%.2f", s.getPercentage()) + "%\n");
-                    writer.write("Grade: " + s.getGrade() + "\n");
-                    writer.write("Marks: " + s.getMarks() + "\n");
-                    writer.write("Remarks: " + GradeUtils.getRemarks(s.getPercentage()) + "\n");
+                    writer.write("Student ID: " + s.getId() + " ");
+                    writer.write("Name: " + s.getName() + " ");
+                    writer.write("Email: " + s.getEmail() + " ");
+                    writer.write("Section: " + s.getSection() + " ");
+                    writer.write("Percentage: " + String.format("%.2f", s.getPercentage()) + "%");
+                    writer.write("Grade: " + s.getGrade() + " ");
+                    writer.write("Marks: " + s.getMarks() + " ");
+                    writer.write("Remarks: " + GradeUtils.getRemarks(s.getPercentage()) + " ");
                     totalPercentage += s.getPercentage();
                     if (s.getPercentage() >= 33) passCount++;
                     if (s.getPercentage() >= 75) distinctionCount++;
@@ -92,10 +92,10 @@ public class FileManager {
                 
                 writer.write(" SUMMARY STATISTICS: ");
                 writer.write("Total Students: " + students.size() + "\n");
-                writer.write("Average %: " + String.format("%.2f", totalPercentage / students.size()) + "%\n");
-                writer.write("Pass Count: " + passCount + "\n");
-                writer.write("Fail Count: " + (students.size() - passCount) + "\n");
-                writer.write("Distinctions (75%+): " + distinctionCount + "\n");
+                writer.write("Average %: " + String.format("%.2f", totalPercentage / students.size()) + "% ");
+                writer.write("Pass Count: " + passCount + " ");
+                writer.write("Fail Count: " + (students.size() - passCount) + " ");
+                writer.write("Distinctions (75%+): " + distinctionCount + " ");
             }
         }
         System.out.println("Generated Report: grade_report.txt");
