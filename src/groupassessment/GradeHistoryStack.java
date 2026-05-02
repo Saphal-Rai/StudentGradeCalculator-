@@ -27,7 +27,7 @@ public class GradeHistoryStack {
         } else {
             System.out.println(" Recent - Oldest        ");
             for (int i = stack.size() - 1; i >= 0; i--) {
-                System.out.printf("│  %d. %-36s│\n", (stack.size() - i), stack.get(i).toString().substring(0, Math.min(36, stack.get(i).toString().length())));
+                System.out.printf("  %d. %-36s ", (stack.size() - i), stack.get(i).toString().substring(0, Math.min(36, stack.get(i).toString().length())));
             }
         }
     }

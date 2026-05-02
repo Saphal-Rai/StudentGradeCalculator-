@@ -192,11 +192,6 @@ public class Main {
         pressEnterToContinue();
     }
     
-
-    private static void addMarksToStudent() throws InvalidMarkException, IOException {
-        System.out.println("ADD MARKS TO STUDENT ");
-        System.out.print(" Enter Student ID: ");
-        int id = getIntInput("");
         
         Student student = studentList.find(id);
         if (student == null) {
