@@ -48,7 +48,6 @@ public class Student extends Person {
         grade = GradeUtils.getGrade(percentage);
     }
     
-    // Update student information
     public void updateInfo(String name, String email, String section) {
         if (name != null && !name.trim().isEmpty()) {
             this.name = name;
